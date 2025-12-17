@@ -69,9 +69,13 @@ public class JwtTokenAuthenticationFilter extends OncePerRequestFilter {
 
         if (token == null) {
             log.warn("No JWT token found for protected path: {}", path);
+<<<<<<< HEAD
 //            handleAccessDenied(response);
             filterChain.doFilter(request, response);
 
+=======
+            handleAccessDenied(response);
+>>>>>>> 958f3652905e138112b0a552cd9eb6e947182df2
             return;
         }
 

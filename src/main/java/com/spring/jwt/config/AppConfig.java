@@ -117,7 +117,11 @@ public class AppConfig {
                                 .ignoringRequestMatchers(
                                                 "/api/**",
                                                 "/user/**",
+<<<<<<< HEAD
                                                 "/api/v1/users/**",
+=======
+                                                "/api/users/**",
+>>>>>>> 958f3652905e138112b0a552cd9eb6e947182df2
 
                                                 jwtConfig.getUrl(),
                                                 jwtConfig.getRefreshUrl()));

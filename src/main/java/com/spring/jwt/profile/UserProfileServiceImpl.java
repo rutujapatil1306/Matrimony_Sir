@@ -71,7 +71,10 @@ public class UserProfileServiceImpl implements UserProfileService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with ID: " + userId));
         UserProfile profile = UserProfileMapper.toEntity(dto, user);
+<<<<<<< HEAD
         profile.setUser(user);
+=======
+>>>>>>> 958f3652905e138112b0a552cd9eb6e947182df2
         UserProfile savedProfile = userProfileRepository.save(profile);
         CompleteProfile cp = completeProfileRepository.findByUser_Id(userId).orElseGet(() -> {
             CompleteProfile newCp = new CompleteProfile();

@@ -123,9 +123,15 @@ public class UserServiceImpl implements UserService {
 
         if (role != null) {
             switch (role.getName()) {
+<<<<<<< HEAD
 //                case "USER":
 //                   createUserProfile(user, userDTO);
 //                    break;
+=======
+                case "USER":
+                   createUserProfile(user, userDTO);
+                    break;
+>>>>>>> 958f3652905e138112b0a552cd9eb6e947182df2
                 case "ADMIN":
                     createAdminProfile(user,userDTO);
 
@@ -143,6 +149,7 @@ public class UserServiceImpl implements UserService {
     private void createUserProfile(User user, UserDTO userDTO) {
         UserProfile userProfile = new UserProfile();
         
+<<<<<<< HEAD
 //        // Required fields from UserDTO - with validation
 //        userProfile.setFirstName(userDTO.getFirstName() != null && !userDTO.getFirstName().trim().isEmpty()
 //            ? userDTO.getFirstName().trim() : "Not Provided");
@@ -159,6 +166,21 @@ public class UserServiceImpl implements UserService {
         userProfile.setFirstName("Not Specified");
         userProfile.setLastName("Not specified");
         userProfile.setAddress("Not specified");
+=======
+        // Required fields from UserDTO - with validation
+        userProfile.setFirstName(userDTO.getFirstName() != null && !userDTO.getFirstName().trim().isEmpty() 
+            ? userDTO.getFirstName().trim() : "Not Provided");
+        userProfile.setLastName(userDTO.getLastName() != null && !userDTO.getLastName().trim().isEmpty() 
+            ? userDTO.getLastName().trim() : "Not Provided");
+        userProfile.setAddress(userDTO.getAddress() != null && !userDTO.getAddress().trim().isEmpty() 
+            ? userDTO.getAddress().trim() : "Not Provided");
+        userProfile.setMail(userDTO.getEmail());
+        userProfile.setMobileNumber(String.valueOf(userDTO.getMobileNumber()));
+        userProfile.setUser(user);
+        
+        // Set default values for other required fields that are not collected during registration
+        // These should be updated when user completes their profile
+>>>>>>> 958f3652905e138112b0a552cd9eb6e947182df2
         userProfile.setAge(18); // Default minimum age
         userProfile.setGender(Gender.MALE); // Default gender - user should update this
         userProfile.setTaluka("Not Specified"); 
